@@ -1,3 +1,61 @@
-body {
-  background-color: aliceblue;
+.box {
+    width: 600px;
+    height: 600px;
+    outline: 1px solid green;
+    position: relative;
+}
+
+.inner-box {
+    width: 50px;
+    height: 50px;
+    outline: 1px solid red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: ;
+    margin-left: -50%;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    flex-basis: calc((100% - 60px) / 3);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-item:not(:nth-child(3n)) {
+    margin-right: var(--card-gap);
+}
+
+.list-item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: var(--card-gap);
+}
+
+.ft-contact-item + .ft-contact-item {
+    margin-top: 9px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-contact.mail::before {
+    display: inline-flex;
+    flex-direction: row;
+    content: '';
+    background-image: url(../images/mail.svg);
+    width: 16px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.header-contact:hover .mail-icon {
+    fill: var(--accent-color);
 }
